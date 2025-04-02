@@ -1,56 +1,65 @@
 # data_parser
 
-A Flutter package providing utilities for parsing HTTP responses, lists, file data, colors, icons, text styles, and enum conversions.
+A package for parsing and converting various data types in Flutter, including JSON, HTTP responses, and lists. It provides a set of utility classes and extensions for easier data handling.
 
 ## Features
-- **HTTP Response Parsing**: Extract meaningful data from API responses.
-- **List Data Parsing**: Convert future or stream-based data lists into model objects.
-- **File Extensions**: Convert files to Base64 strings.
-- **Color and Icon Data Helpers**: Serialize and deserialize `Color` and `IconData` objects.
-- **Text Style Serialization**: Convert `TextStyle` objects to and from JSON.
-- **Utility Functions**:
-    - Convert between `String` and `int` safely.
-    - Convert between enum values and strings.
+
+- Parse HTTP response data (`IHttpResponseDataParser`)
+- Parse list data with different conversion methods (`IListDataParserService`)
+- Utility extensions for converting files to Base64 (`FileToBase64String`)
+- Helper classes for converting `Color`, `IconData`, and `TextStyle` to and from JSON
+- Utility functions for enum conversions
 
 ## Installation
-Add this to your `pubspec.yaml` file:
+
+Add the following dependency to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  data_parser: latest_version
+  data_parser: ^1.0.0
 ```
 
-Then, run:
-```sh
-flutter pub get
-```
-
-## Usage
-Import the package:
-
-```dart
-import 'package:data_parser/data_parser.dart';
-```
 
 ### Parsing HTTP Responses
 ```dart
-HttpResponseDataParserImpl parser = HttpResponseDataParserImpl();
-Map<String, dynamic>? parsedData = parser.parseHttpResponse(apiResponse);
+import 'package:data_parser/data/data_sources/list_data_parser_service_impl.dart';
+
+final parser = HttpResponseDataParserImpl();
+final responseData = parser.parseHttpResponse({
+  'status': true,
+  'data': {
+    'key1': 'value1',
+    'key2': 'value2',
+  }
+});
+
+print(responseData);  // Outputs: {key1: value1, key2: value2}
 ```
 
 ### Parsing Lists
 ```dart
-ListDataParserServiceImpl<MyModel> listParser = ListDataParserServiceImpl();
-List<MyModel>? models = listParser.parseFutureDataList(
-  mapList: dataList,
+import 'package:data_parser/data/data_sources/list_data_parser_service_impl.dart';
+
+final listParser = ListDataParserServiceImpl<MyModel>();
+
+List<MyModel>? parsedList = listParser.parseFutureDataList(
+  mapList: myJsonList,
   converter: (item) => MyModel.fromJson(item),
+);
+
+print(parsedList);
+
 );
 ```
 
 ### Converting Files to Base64
 ```dart
-File file = File('path/to/file.jpg');
-String base64String = await file.toBase64String();
+import 'dart:io';
+import 'package:data_parser/extensions/utility_parsers/file_extensions.dart';
+
+File myFile = File('path_to_your_file');
+String base64String = await myFile.toBase64String();
+
 ```
 
 ### Working with Colors and Icons
@@ -61,15 +70,53 @@ Map<String, dynamic>? iconJson = IconDataJsonHelper.toJson(Icons.home);
 
 ### Enum Conversion
 ```dart
-enum MyEnum { optionOne, optionTwo }
+import 'package:data_parser/utils/enum_from_string.dart';
 
-String? enumString = EnumUtils.enumToString(MyEnum.optionOne);
-MyEnum? enumValue = enumFromString(MyEnum.values, 'optionOne');
+enum MyEnum { first, second }
+
+MyEnum? enumValue = enumFromString(MyEnum.values, 'first');
+print(enumValue);  // MyEnum.first
+
+String? enumString = EnumUtils.enumToString(MyEnum.first);
+print(enumString);  // first
+
+```
+
+### Convert Color to and from JSON:
+```dart
+import 'package:data_parser/helper/color_json_helper.dart';
+
+Color color = Colors.blue;
+int? colorJson = ColorJsonHelper.toJson(color);
+
+Color? parsedColor = ColorJsonHelper.fromJson(colorJson);
+```
+
+### Convert IconData to and from JSON:
+```dart
+import 'package:data_parser/helper/icon_data_json_helper.dart';
+
+IconData icon = Icons.star;
+Map<String, dynamic>? iconJson = IconDataJsonHelper.toJson(icon);
+
+IconData? parsedIcon = IconDataJsonHelper.fromJson(iconJson);
+
+```
+
+### Convert TextStyle to and from JSON:
+```dart
+import 'package:data_parser/helper/text_style_json_helper.dart';
+
+TextStyle textStyle = TextStyle(color: Colors.red, fontSize: 20);
+Map<String, dynamic>? textStyleJson = TextStyleJsonHelper.toJson(textStyle);
+
+TextStyle? parsedTextStyle = TextStyleJsonHelper.fromJson(textStyleJson);
 ```
 
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request on GitHub.
 
 ## License
-This package is released under the MIT License.
+Make sure to adjust the version number in the `pubspec.yaml` file and the usage examples based on your specific implementation!
+
 

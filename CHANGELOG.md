@@ -3,19 +3,18 @@
 All notable changes to this project will be documented in this file.
 
 ## 0.0.2
-
 ### Added 
-- **HTTP Response Parsing** to extract structured data from API responses.
-- Implemented **List Data Parsing** for converting future or stream-based data lists into models.
-- Included **File Extensions** to convert files to Base64 strings.
-- Added **Color and Icon Data Helpers** for serialization and deserialization.
-- Implemented **Text Style Serialization** to convert `TextStyle` objects to and from JSON.
-- Provided **Utility Functions**:
-    - Convert between `String` and `int` safely.
-    - Convert between enum values and strings.
-- Ensured support for Flutter projects with easy-to-use utilities.
+- **HttpResponseDataParserImpl**: Class to parse HTTP response data, handling the "status" and "data" fields in JSON responses.
+- **ListDataParserServiceImpl**: Class to parse lists of data with methods to convert them using custom converters.
+- **FileToBase64String**: Extension on `File` class to convert files to Base64 encoded strings.
+- **ColorJsonHelper**: Helper class to convert `Color` objects to and from JSON.
+- **IconDataJsonHelper**: Helper class to convert `IconData` objects to and from JSON.
+- **TextStyleJsonHelper**: Helper class to convert `TextStyle` objects to and from JSON.
+- **enumFromString**: Utility function to convert strings to enum values.
+- **EnumUtils**: Helper method to convert enum values to strings.
 
 
 
 ## 0.0.1
-- Initial Release.
+### Initial release
+- The first version of the `data_parser` package, designed for handling various data parsing tasks in Flutter, including JSON parsing, file encoding, and handling of common Flutter types (e.g., `Color`, `IconData`, `TextStyle`).
