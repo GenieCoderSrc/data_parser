@@ -1,7 +1,9 @@
 name: data_parser
-description: "A new Flutter package project."
-version: 0.0.1
-homepage:
+description: "A Flutter package providing utilities for parsing HTTP responses, handling list data, converting files to Base64, serializing colors and icons, converting text styles to JSON, and handling enum conversions."
+version: 0.0.2
+homepage: https://github.com/GenieCoderSrc/data_parser
+repository: https://github.com/GenieCoderSrc/data_parser
+issue_tracker: https://github.com/GenieCoderSrc/data_parser/issues
 
 environment:
   sdk: ^3.6.0
@@ -10,7 +12,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  fluttertoast: ^8.2.10
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -22,6 +24,9 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+
+example:
+  path: example
 
 # To add assets to your package, add an assets section, like this:
 # assets:
