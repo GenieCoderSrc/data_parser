@@ -16,7 +16,7 @@ Add the following dependency to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  data_parser: ^1.0.0
+  data_parser: latest_version
 ```
 
 

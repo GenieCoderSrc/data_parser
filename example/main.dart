@@ -87,13 +87,13 @@ void main() async {
   print('Parsed TextStyle: $parsedTextStyle\n');
 
 
-  // 7. Enum Conversion usage
-  print("=== Enum Conversion ===");
-  enum MyEnum { first, second }
-
-  MyEnum? enumValue = enumFromString(MyEnum.values, 'first');
-  print('Enum Value: $enumValue');
-
-  String? enumString = EnumUtils.enumToString(MyEnum.first);
-  print('Enum String: $enumString');
+  // // 7. Enum Conversion usage
+  // print("=== Enum Conversion ===");
+  // enum MyEnum { first, second }
+  //
+  // MyEnum? enumValue = enumFromString(MyEnum.values, 'first');
+  // print('Enum Value: $enumValue');
+  //
+  // String? enumString = EnumUtils.enumToString(MyEnum.first);
+  // print('Enum String: $enumString');
 }

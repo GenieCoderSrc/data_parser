@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.0.3
+- update example file. 
+
 ## 0.0.2
 ### Added 
 - **HttpResponseDataParserImpl**: Class to parse HTTP response data, handling the "status" and "data" fields in JSON responses.
