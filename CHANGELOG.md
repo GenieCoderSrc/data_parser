@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.0.4
+- update extensions file. 
+- add json parser file. 
+- add helper Data file. 
+- add helper Utility Parsers file. 
+
+
+
 ## 0.0.3
 - update example file. 
 

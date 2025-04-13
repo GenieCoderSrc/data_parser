@@ -1,6 +1,6 @@
 name: data_parser
 description: "A Flutter package for parsing and converting various data types, including JSON, HTTP responses, files, and common Flutter types like Color, IconData, and TextStyle."
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/GenieCoderSrc/data_parser
 repository: https://github.com/GenieCoderSrc/data_parser
 issue_tracker: https://github.com/GenieCoderSrc/data_parser/issues
