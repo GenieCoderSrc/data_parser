@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.0.4+1
+- added string extension. 
+ 
+
 ## 0.0.4
 - update extensions file. 
 - add json parser file. 
