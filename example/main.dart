@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:data_parser/data/data_sources/http_response_data_parser_impl.dart';
 import 'package:data_parser/data_parser.dart';
-import 'package:data_parser/helper/color_parser/color_json_helper.dart';
 import 'package:data_parser/helper/text_style_json_helper.dart';
 import 'package:flutter/material.dart';
 
@@ -55,16 +54,8 @@ void main() async {
   String base64String = await myFile.toBase64String();
   print('Base64 String: $base64String\n');
 
-  // 4. ColorJsonHelper usage
-  print("=== Color JSON Helper ===");
-  Color color = Colors.blue;
-  int? colorJson = ColorJsonHelper().toJson(color);
-  print('Color JSON: $colorJson');
 
-  Color? parsedColor = ColorJsonHelper().fromJson(colorJson);
-  print('Parsed Color: $parsedColor\n');
-
-  // 5. IconDataJsonHelper usage
+  // 4. IconDataJsonHelper usage
   print("=== IconData JSON Helper ===");
   IconData icon = Icons.star;
   Map<String, dynamic>? iconJson = IconDataJsonHelper.toJson(icon);
@@ -73,7 +64,7 @@ void main() async {
   IconData? parsedIcon = IconDataJsonHelper.fromJson(iconJson);
   print('Parsed Icon: $parsedIcon\n');
 
-  // 6. TextStyleJsonHelper usage
+  // 5. TextStyleJsonHelper usage
   print("=== TextStyle JSON Helper ===");
   TextStyle textStyle = TextStyle(color: Colors.red, fontSize: 20);
   Map<String, dynamic>? textStyleJson = TextStyleJsonHelper.toJson(textStyle);
@@ -82,7 +73,7 @@ void main() async {
   TextStyle? parsedTextStyle = TextStyleJsonHelper.fromJson(textStyleJson);
   print('Parsed TextStyle: $parsedTextStyle\n');
 
-  // // 7. Enum Conversion usage
+  // // 6. Enum Conversion usage
   // print("=== Enum Conversion ===");
   // enum MyEnum { first, second }
   //
