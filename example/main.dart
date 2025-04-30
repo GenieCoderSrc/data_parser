@@ -1,13 +1,9 @@
 import 'dart:io';
+
 import 'package:data_parser/data/data_sources/http_response_data_parser_impl.dart';
-import 'package:data_parser/data/data_sources/list_data_parser_service_impl.dart';
-import 'package:data_parser/data/data_sources/i_data_sources/i_http_response_data_parser.dart';
 import 'package:data_parser/data_parser.dart';
-import 'package:data_parser/helper/color_json_helper.dart';
-import 'package:data_parser/helper/icon_data_json_helper.dart';
+import 'package:data_parser/helper/color_parser/color_json_helper.dart';
 import 'package:data_parser/helper/text_style_json_helper.dart';
-import 'package:data_parser/utils/enum_from_string.dart';
-import 'package:data_parser/utils/enum_utils.dart';
 import 'package:flutter/material.dart';
 
 // Example model to show how to use the parsing service
@@ -62,10 +58,10 @@ void main() async {
   // 4. ColorJsonHelper usage
   print("=== Color JSON Helper ===");
   Color color = Colors.blue;
-  int? colorJson = ColorJsonHelper.toJson(color);
+  int? colorJson = ColorJsonHelper().toJson(color);
   print('Color JSON: $colorJson');
 
-  Color? parsedColor = ColorJsonHelper.fromJson(colorJson);
+  Color? parsedColor = ColorJsonHelper().fromJson(colorJson);
   print('Parsed Color: $parsedColor\n');
 
   // 5. IconDataJsonHelper usage
@@ -85,7 +81,6 @@ void main() async {
 
   TextStyle? parsedTextStyle = TextStyleJsonHelper.fromJson(textStyleJson);
   print('Parsed TextStyle: $parsedTextStyle\n');
-
 
   // // 7. Enum Conversion usage
   // print("=== Enum Conversion ===");
