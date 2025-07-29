@@ -1,8 +1,5 @@
 import 'dart:io';
-
-import 'package:data_parser/data/data_sources/http_response_data_parser_impl.dart';
 import 'package:data_parser/data_parser.dart';
-import 'package:data_parser/helper/text_style_json_helper.dart';
 import 'package:flutter/material.dart';
 
 // Example model to show how to use the parsing service
