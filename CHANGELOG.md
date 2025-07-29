@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.0.5
+- added double_extensions file.
+- added int_extensions.
+- added string_extensions.
+ 
+
+
+## 0.0.4+1
+- added string extension. 
+ 
+
+## 0.0.4
+- update extensions file. 
+- add json parser file. 
+- add helper Data file. 
+- add helper Utility Parsers file. 
+
+
+
 ## 0.0.3
 - update example file. 
 
