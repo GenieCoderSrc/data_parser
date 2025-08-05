@@ -18,5 +18,3 @@ export 'utils/convert_data_type.dart';
 export 'utils/enum_from_string.dart';
 
 export 'utils/enum_utils.dart';
-
-
