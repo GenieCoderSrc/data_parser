@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+
+## 0.0.6
+
+### Aug 22, 2025
+
+### ✨ Updated
+
+- Updated Dart sdk to 3.9.0
+- Removed `flutter_lints` Dependency
+
+
 ## 0.0.5
 - added double_extensions file.
 - added int_extensions.

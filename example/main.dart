@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:data_parser/data_parser.dart';
 import 'package:flutter/material.dart';
 
@@ -50,7 +51,6 @@ void main() async {
   File myFile = File('path_to_your_file'); // Provide a valid file path
   String base64String = await myFile.toBase64String();
   print('Base64 String: $base64String\n');
-
 
   // 4. IconDataJsonHelper usage
   print("=== IconData JSON Helper ===");
