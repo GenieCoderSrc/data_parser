@@ -13,7 +13,8 @@ extension DoubleExtensions on double? {
       return this!.toInt().toString(); // Return as int if whole number
     } else {
       return this!.toStringAsFixed(
-          fractionDigits ?? 2); // Return with specified decimal places
+        fractionDigits ?? 2,
+      ); // Return with specified decimal places
     }
   }
 }

@@ -11,10 +11,7 @@ class MyModel {
   MyModel({required this.key1, required this.key2});
 
   factory MyModel.fromJson(Map<String, dynamic> json) {
-    return MyModel(
-      key1: json['key1'] ?? '',
-      key2: json['key2'] ?? '',
-    );
+    return MyModel(key1: json['key1'] ?? '', key2: json['key2'] ?? '');
   }
 }
 
@@ -24,7 +21,7 @@ void main() async {
   final parser = HttpResponseDataParserImpl();
   final response = {
     'status': true,
-    'data': {'key1': 'value1', 'key2': 'value2'}
+    'data': {'key1': 'value1', 'key2': 'value2'},
   };
 
   var parsedResponse = parser.parseHttpResponse(response);
@@ -36,7 +33,7 @@ void main() async {
 
   List<Map<String, dynamic>> myJsonList = [
     {'key1': 'value1', 'key2': 'value2'},
-    {'key1': 'value3', 'key2': 'value4'}
+    {'key1': 'value3', 'key2': 'value4'},
   ];
 
   List<MyModel>? parsedList = listParser.parseFutureDataList(
