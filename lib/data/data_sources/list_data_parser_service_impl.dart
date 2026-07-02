@@ -11,40 +11,46 @@ class ListDataParserServiceImpl<M> extends IListDataParserService<M> {
   //     _instance ??= DataParserServiceImpl._();
 
   @override
-  List<M>? parseStreamListData(
-      {required List<Object?> event, required Function converter}) {
+  List<M>? parseStreamListData({
+    required List<Object?> event,
+    required Function converter,
+  }) {
     try {
       return event
           .map<M>((Object? item) => converter(item as Map<String, dynamic>))
           .toList();
     } catch (e) {
       debugPrint(
-          'DataParserServiceImpl | $M | parseStreamListData | error: $e');
+        'DataParserServiceImpl | $M | parseStreamListData | error: $e',
+      );
 
       return null;
     }
   }
 
   @override
-  List<M>? parseFutureDataList(
-      {required List<Object>? mapList,
-      required Function(Map<String, dynamic> item) converter}) {
+  List<M>? parseFutureDataList({
+    required List<Object>? mapList,
+    required Function(Map<String, dynamic> item) converter,
+  }) {
     try {
       return mapList
           ?.map<M>((Object? item) => converter(item as Map<String, dynamic>))
           .toList();
     } catch (e) {
       debugPrint(
-          'DataParserServiceImpl | $M | parseStreamListData | error: $e');
+        'DataParserServiceImpl | $M | parseStreamListData | error: $e',
+      );
 
       return null;
     }
   }
 }
 
-List<M>? parseFutureDataList<M>(
-    {required List<Object>? mapList,
-    required Function(Map<String, dynamic> item) converter}) {
+List<M>? parseFutureDataList<M>({
+  required List<Object>? mapList,
+  required Function(Map<String, dynamic> item) converter,
+}) {
   try {
     return mapList
         ?.map<M>((Object? item) => converter(item as Map<String, dynamic>))

@@ -9,7 +9,8 @@ T? enumFromString<T>(List<T> values, String type) {
   } catch (e) {
     // Log the error or handle it
     debugPrint(
-        'EnumFromString | enumFromString | Error: Failed to find enum value for type "$type". Details: $e');
+      'EnumFromString | enumFromString | Error: Failed to find enum value for type "$type". Details: $e',
+    );
     return null; // Return null to indicate failure
   }
 }

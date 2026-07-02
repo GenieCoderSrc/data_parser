@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:data_parser/data_parser.dart';
 import 'package:flutter/material.dart';
 
@@ -10,10 +11,7 @@ class MyModel {
   MyModel({required this.key1, required this.key2});
 
   factory MyModel.fromJson(Map<String, dynamic> json) {
-    return MyModel(
-      key1: json['key1'] ?? '',
-      key2: json['key2'] ?? '',
-    );
+    return MyModel(key1: json['key1'] ?? '', key2: json['key2'] ?? '');
   }
 }
 
@@ -23,7 +21,7 @@ void main() async {
   final parser = HttpResponseDataParserImpl();
   final response = {
     'status': true,
-    'data': {'key1': 'value1', 'key2': 'value2'}
+    'data': {'key1': 'value1', 'key2': 'value2'},
   };
 
   var parsedResponse = parser.parseHttpResponse(response);
@@ -35,7 +33,7 @@ void main() async {
 
   List<Map<String, dynamic>> myJsonList = [
     {'key1': 'value1', 'key2': 'value2'},
-    {'key1': 'value3', 'key2': 'value4'}
+    {'key1': 'value3', 'key2': 'value4'},
   ];
 
   List<MyModel>? parsedList = listParser.parseFutureDataList(
@@ -50,7 +48,6 @@ void main() async {
   File myFile = File('path_to_your_file'); // Provide a valid file path
   String base64String = await myFile.toBase64String();
   print('Base64 String: $base64String\n');
-
 
   // 4. IconDataJsonHelper usage
   print("=== IconData JSON Helper ===");
