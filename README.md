@@ -15,6 +15,8 @@ A package for parsing and converting various data types in Flutter, including JS
 Add the following dependency to your `pubspec.yaml` file:
 
 ```yaml
+resolution: workspace
+
 dependencies:
   data_parser: latest_version
 ```
