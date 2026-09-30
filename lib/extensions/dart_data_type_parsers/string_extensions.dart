@@ -16,19 +16,18 @@ extension StringExtensions on String {
     final acronyms = ['API', 'DB', 'ID']; // Add more acronyms as needed
 
     return replaceAllMapped(
-          RegExp(r'([a-z])([A-Z])'),
-          (Match m) => '${m[1]} ${m[2]}',
-        ) // Handle camelCase
+      RegExp(r'([a-z])([A-Z])'),
+      (Match m) => '${m[1]} ${m[2]}',
+    ) // Handle camelCase
         .split(RegExp(r'[_\s]+')) // Split by underscore or spaces
         .map((word) {
-          final upperWord = word.toUpperCase();
-          if (acronyms.contains(upperWord)) {
-            return upperWord; // Keep acronyms fully capitalized
-          }
-          return word[0].toUpperCase() +
-              word.substring(1).toLowerCase(); // Title case for normal words
-        })
-        .join(' ');
+      final upperWord = word.toUpperCase();
+      if (acronyms.contains(upperWord)) {
+        return upperWord; // Keep acronyms fully capitalized
+      }
+      return word[0].toUpperCase() +
+          word.substring(1).toLowerCase(); // Title case for normal words
+    }).join(' ');
   }
 
   String toPluralCase() {
